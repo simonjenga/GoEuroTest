@@ -34,6 +34,8 @@ Then run the JAR file created by executing the following:
 java -jar target/GoEuroTest.jar Melbourne
 ```
 
+The results of the API query will be saved in a CSV file called: ```GoEuroTest.csv``` created at the project root directory.
+
 To execute Unit tests, execute the following:
 
 ```
