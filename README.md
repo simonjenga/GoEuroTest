@@ -18,12 +18,12 @@ http://api.goeuro.com/api/v2/position/suggest/en/Berlin
 Building The Project
 ====================
 
-The project uses Java 7 and Maven 3 as the build tool and also to manage the dependencies.
+The project uses ```Java 7``` and ```Maven 3``` as the build tool and also to manage the dependencies.
 
-To run Maven build execute the following command from a console/command prompt with the project root directory:
+To run Maven build execute the following command from a console/command prompt with the project root directory as the top level directory:
 
 ```
-$ mvn clean package
+mvn clean package
 ```
 
 This will create a distributable and executable JAR file for the standalone application.
@@ -32,4 +32,10 @@ Then run the JAR file created by executing the following:
 
 ```
 java -jar target/GoEuroTest.jar Melbourne
+```
+
+To execute Unit tests, execute the following:
+
+```
+mvn clean test
 ```
