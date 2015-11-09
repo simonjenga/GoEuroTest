@@ -20,10 +20,10 @@ public class ApplicationTest {
      * 
      * @throws Exception If some problem inside
      */
-	@Test
-	public void testValidCityName() throws Exception {
-		Application.main(new String[] { "New", "York" });
-	}
+    @Test
+    public void testValidCityName() throws Exception {
+        Application.main(new String[] { "New", "York" });
+    }
 	
     /**
      * Test for an Invalid city name.
@@ -31,10 +31,10 @@ public class ApplicationTest {
      * 
      * @throws Exception If some problem inside
      */
-	@Test
-	public void testInValidCityName() throws Exception {
-		Application.main(new String[] { "@#$?x" });
-	}
+    @Test
+    public void testInValidCityName() throws Exception {
+        Application.main(new String[] { "@#$?x" });
+    }
 	
     /**
      * Test for an Valid city name with invalid data among the names provided.
@@ -42,10 +42,10 @@ public class ApplicationTest {
      * 
      * @throws Exception If some problem inside
      */
-	@Test
-	public void testValidAndInvalidInputArguments() throws Exception {
-		Application.main(new String[] { "Rio", "de", null, "Janeiro", null });
-	}	
+    @Test
+    public void testValidAndInvalidInputArguments() throws Exception {
+        Application.main(new String[] { "Rio", "de", null, "Janeiro", null });
+    }
 	
     /**
      * Test for mandatory and valid input arguments otherwise, the validation
@@ -53,9 +53,9 @@ public class ApplicationTest {
      * 
      * @throws Exception If some problem inside
      */
-	@Test(expected = IllegalArgumentException.class)
-	public void testInvalidInputArguments() throws Exception {
-		Application.main(new String[] { "", null });
-		Assert.fail("Exception expected here");
-	}
+    @Test(expected = IllegalArgumentException.class)
+    public void testInvalidInputArguments() throws Exception {
+        Application.main(new String[] { "", null });
+        Assert.fail("Exception expected here");
+    }
 }
