@@ -14,7 +14,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ApplicationTest {
 
-	/**
+    /**
      * Test for a Valid city name.
      * The results for this test are logged to console.
      * 
@@ -25,7 +25,7 @@ public class ApplicationTest {
 		Application.main(new String[] { "New", "York" });
 	}
 	
-	/**
+    /**
      * Test for an Invalid city name.
      * The results for this test are logged to console.
      * 
@@ -36,7 +36,7 @@ public class ApplicationTest {
 		Application.main(new String[] { "@#$?x" });
 	}
 	
-	/**
+    /**
      * Test for an Valid city name with invalid data among the names provided.
      * The results for this test are logged to console.
      * 
@@ -47,7 +47,7 @@ public class ApplicationTest {
 		Application.main(new String[] { "Rio", "de", null, "Janeiro", null });
 	}	
 	
-	/**
+    /**
      * Test for mandatory and valid input arguments otherwise, the validation
      * mechanism with throw an {@link java.lang.IllegalArgumentException)}
      * 
