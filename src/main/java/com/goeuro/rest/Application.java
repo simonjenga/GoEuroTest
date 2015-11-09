@@ -100,10 +100,10 @@ public class Application implements CommandLineRunner {
                 //Write the city list to the CSV file
                 for (int i = 0; i < cities.size(); i++) {
                     sb.append(cities.get(i).get_id().toString()).append(", ")
-                    .append(cities.get(i).getName()).append(", ")
-                    .append(cities.get(i).getType()).append(", ")
-                    .append(cities.get(i).getGeo_position().getLatitude().toString()).append( ", ")
-                    .append(cities.get(i).getGeo_position().getLongitude().toString()).append("\n");
+                        .append(cities.get(i).getName()).append(", ")
+                        .append(cities.get(i).getType()).append(", ")
+                        .append(cities.get(i).getGeo_position().getLatitude().toString()).append( ", ")
+                        .append(cities.get(i).getGeo_position().getLongitude().toString()).append("\n");
                 }
                 writer.write(sb.toString());
                 LOG.info("CSV file was created successfully!");
@@ -118,9 +118,9 @@ public class Application implements CommandLineRunner {
     }
     
     /**
-	 * Are we online? Do we have an Internet connection? 
-	 * @return TRUE if we're online
-	 */
+     * Are we online? Do we have an Internet connection?
+     * @return TRUE if we're online
+     */
     private boolean areWeOnline() {
         boolean online = true;
         try {
