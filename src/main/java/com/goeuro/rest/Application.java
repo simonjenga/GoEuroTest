@@ -85,7 +85,7 @@ public class Application implements CommandLineRunner {
             // This is used to output the file to be returned
             File outputFile = new File("GoEuroTest.csv");
 
-            // uses "ISO_8859_1" Charset to enable the writing of "umlauts" found in Germanic languages
+            // uses "ISO_8859_1" Charset to enable the writing of "umlaut/dieresis" found in Germanic languages
             writer = new OutputStreamWriter(new FileOutputStream(outputFile), StandardCharsets.ISO_8859_1);
 
             if (cities.isEmpty()) {
