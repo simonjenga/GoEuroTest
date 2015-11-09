@@ -18,7 +18,7 @@ http://api.goeuro.com/api/v2/position/suggest/en/Berlin
 Building The Project
 ====================
 
-The project uses ```Java 7``` and ```Maven 3``` as the build tool and also to manage the dependencies.
+The project uses ```JDK 7``` and ```Maven >= 3.1.1`` as the build tool and to also manage the dependencies.
 
 To run Maven build execute the following command from a console/command prompt with the project root directory as the top level directory:
 
