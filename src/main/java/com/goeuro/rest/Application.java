@@ -90,7 +90,7 @@ public class Application implements CommandLineRunner {
             // This is used to output the file to be returned
             File outputFile = new File("GoEuroTest.csv");
             
-            writer = new OutputStreamWriter(new FileOutputStream(outputFile), CHARSET);
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), CHARSET));
 
             if (cities.isEmpty()) {
                 writer.write("THE ENDPOINT FOUND NO MATCHING RESULTS FOR THE SPECIFIED CITY!");
