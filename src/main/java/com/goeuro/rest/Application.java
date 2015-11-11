@@ -1,11 +1,13 @@
 package com.goeuro.rest;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +31,9 @@ public class Application implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
     private static final String URL = "http://api.goeuro.com/api/v2/position/suggest/en/";
+    
+    // "ISO_8859_1" Charset enables writing of "umlaut/dieresis" found in Germanic languages
+    private static final Charset CHARSET = StandardCharsets.ISO_8859_1;
 
     /**
      * Entry point to the Application.
@@ -67,7 +72,7 @@ public class Application implements CommandLineRunner {
             this.writeToCSVfile(cities);
         } else {
             LOG.info("No Internet connection, Please provide a connection!");
-            throw new IllegalStateException("There is No Internet connection, Please provide a connection!");
+            throw new IllegalStateException("No Internet connection found, Please provide a connection!");
         }
     }
     
@@ -84,9 +89,8 @@ public class Application implements CommandLineRunner {
         try {
             // This is used to output the file to be returned
             File outputFile = new File("GoEuroTest.csv");
-
-            // uses "ISO_8859_1" Charset to enable the writing of "umlaut/dieresis" found in Germanic languages
-            writer = new OutputStreamWriter(new FileOutputStream(outputFile), StandardCharsets.ISO_8859_1);
+            
+            writer = new OutputStreamWriter(new FileOutputStream(outputFile), CHARSET);
 
             if (cities.isEmpty()) {
                 writer.write("THE ENDPOINT FOUND NO MATCHING RESULTS FOR THE SPECIFIED CITY!");
