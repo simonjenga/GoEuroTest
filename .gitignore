@@ -6,4 +6,5 @@ local-repo/
 .settings/
 .classpath
 .project
+.wtpmodules
 GoEuroTest.csv

@@ -33,3 +33,7 @@ Results of the API query will be saved in a CSV file called: ```GoEuroTest.csv``
 To run Unit tests, execute the following:
 
 ```mvn clean test```
+
+### Instructions
+
+Eclipse users run `mvn eclipse:eclipse` and then import the project or just import the code as a Maven project into IntelliJ, NetBeans, or Eclipse.
