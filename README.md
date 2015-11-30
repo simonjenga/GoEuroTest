@@ -37,3 +37,5 @@ To run Unit tests, execute the following:
 ### Instructions
 
 Eclipse users run `mvn eclipse:eclipse` and then import the project or just import the code as a Maven project into IntelliJ, NetBeans, or Eclipse.
+
+To generate project documentation of Java source files (Javadoc), run `mvn javadoc:javadoc`
