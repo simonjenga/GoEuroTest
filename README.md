@@ -9,7 +9,7 @@ The program takes this String "CITY_NAME" and queries it with the location JSON 
 
 http://api.goeuro.com/api/v2/position/suggest/en/CITY_NAME
 
-Where CITY_NAME is the a String that the user has entered as a parameter when calling the tool, e.g.
+Where CITY_NAME is the String that the user has entered as a parameter when calling the tool, e.g.
 
 http://api.goeuro.com/api/v2/position/suggest/en/Berlin
 
