@@ -3,7 +3,7 @@ Java Developer Test Solution
 
 This is a Java command line tool that takes a String as an input parameter, queries an API endpoint and transforms the result data into a CSV file.
 
-```java -jar GoEuroTest.jar "CITY_NAME"```
+```java -jar target/GoEuroTest.jar "CITY_NAME"```
 
 The program takes this String "CITY_NAME" and queries it with the location JSON API endpoint:
 
