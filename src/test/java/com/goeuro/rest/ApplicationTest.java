@@ -59,11 +59,12 @@ public class ApplicationTest {
             Application.main(new String[] { "", null });
             Assert.fail("Exception expected here");
         } catch (IllegalArgumentException ex) {
-        	final String message = ex.getMessage();
+            final String message = ex.getMessage();
+            Assert.assertFalse(message.equals("") || message.equals(null));
+            Assert.assertTrue(!message.equals("") && !message.equals(null));
             Assert.assertSame(message, "City name MUST be specified!");
             Assert.assertEquals(message, "City name MUST be specified!");
             Assert.assertTrue(message.equals("City name MUST be specified!"));
-            Assert.assertFalse(message.equals("") || message.equals(null));
         }
     }
 }
