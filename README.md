@@ -1,4 +1,4 @@
-Java Developer Test Solution
+Restful Web Service Code Challenge
 ============================
 
 This is a Java command line tool that takes a String as an input parameter, queries an API endpoint and transforms the result data into a CSV file.

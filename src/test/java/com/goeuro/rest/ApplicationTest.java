@@ -53,9 +53,15 @@ public class ApplicationTest {
      * 
      * @throws Exception If some problem inside
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidInputArguments() throws Exception {
-        Application.main(new String[] { "", null });
-        Assert.fail("Exception expected here");
+        try {
+            Application.main(new String[] { "", null });
+            Assert.fail("Exception expected here");
+        } catch (IllegalArgumentException ex) {
+            Assert.assertSame(ex.getMessage(), "City name MUST be specified!");
+            Assert.assertEquals(ex.getMessage(), "City name MUST be specified!");
+            Assert.assertTrue(ex.getMessage().equals("City name MUST be specified!"));
+        }
     }
 }
