@@ -79,10 +79,10 @@ public class Application implements CommandLineRunner {
 
             City[] cityObjectArr = restTemplate.getForObject(URL.concat(strings[0]), City[].class);
             if (cityObjectArr == null) {
-	            LOG.info("The returned RestTemplateObject is null!");
-	            throw new IllegalStateException("GET request for ENDPOINT URL failed to fetch results; -> 301 (Moved Permanently)");
+                LOG.info("The returned RestTemplateObject is null!");
+                throw new IllegalStateException("GET request for ENDPOINT URL failed to fetch results; -> 301 (Moved Permanently)");
             } else {
-	            LOG.info("GET request for ENDPOINT URL fetched some results");
+                LOG.info("GET request for ENDPOINT URL fetched some results");
                 List<City> cities = Arrays.asList(cityObjectArr);
                 this.writeToCSVfile(cities);
             }
