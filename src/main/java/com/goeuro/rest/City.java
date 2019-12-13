@@ -1,6 +1,7 @@
 package com.goeuro.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This is a Domain class that will contain the data representation for the City object
@@ -11,18 +12,43 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class City {
 
+    @JsonProperty("id")
     private Long _id;
+
+    @JsonProperty("key")
     private String key;
+
+    @JsonProperty("name")
     private String name;
+
+    @JsonProperty("fullName")
     private String fullName;
+
+    @JsonProperty("iataAirportCode")
     private String iata_airport_code;
+
+    @JsonProperty("type")
     private String type;
+
+    @JsonProperty("country")
     private String country;
+
+    @JsonProperty("geoPosition")
     private GeoPosition geo_position;
+
+    @JsonProperty("locationId")
     private Long locationId;
+
+    @JsonProperty("inEurope")
     private boolean inEurope;
+
+    @JsonProperty("countryCode")
     private String countryCode;
+
+    @JsonProperty("coreCountry")
     private boolean coreCountry;
+
+    @JsonProperty("distance")
     private String distance;
 
     /**
