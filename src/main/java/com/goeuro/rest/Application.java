@@ -16,7 +16,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -26,7 +33,11 @@ import org.springframework.web.client.RestTemplate;
  * @author Simon Njenga
  * @since 0.1
  */
+@Configuration
+@ComponentScan
 @SpringBootApplication
+@EnableTransactionManagement
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class, BatchAutoConfiguration.class})
 public class Application implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
@@ -66,10 +77,15 @@ public class Application implements CommandLineRunner {
             LOG.info(strings[0]);
             RestTemplate restTemplate = new RestTemplate();
 
-            List<City> cities = Arrays.asList(
-                restTemplate.getForObject(URL.concat(strings[0]), City[].class));
-
-            this.writeToCSVfile(cities);
+            City[] cityObjectArr = restTemplate.getForObject(URL.concat(strings[0]), City[].class);
+            if (cityObjectArr == null) {
+                LOG.info("The returned RestTemplateObject is null!");
+                throw new IllegalStateException("GET request for ENDPOINT URL failed to fetch results; -> 301 (Moved Permanently)");
+            } else {
+                LOG.info("GET request for ENDPOINT URL fetched some results");
+                List<City> cities = Arrays.asList(cityObjectArr);
+                this.writeToCSVfile(cities);
+            }
         } else {
             LOG.info("No Internet connection, Please provide a connection!");
             throw new IllegalStateException("No Internet connection found, Please provide a connection!");
