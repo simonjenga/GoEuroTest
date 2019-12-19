@@ -1,6 +1,7 @@
 package com.goeuro.rest;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This is a Domain class that will contain the data (latitude and longitude) representation
@@ -12,7 +13,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeoPosition {
 
+    @JsonProperty("latitude")
     private Double latitude;
+
+    @JsonProperty("longitude")
     private Double longitude;
 
     /**
